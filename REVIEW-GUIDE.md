@@ -15,6 +15,9 @@
 - **会一点 git**：clone 一次，以后 `git pull` 取最新（也可以用底下 `skills/` 里的同步技能，让 agent 帮你拉取和提交）
 - **网络不方便**：直接找组长要文件，一样审、一样回传
 
+用 agent 的成员可以装仓库里的同步技能 `skills/ba-git-sync`（只负责拉稿、命名、提交、开 PR，不审内容）：
+`python skills/ba-git-sync/scripts/preflight.py` 会告诉你今天该审哪份、改完该存成什么名字。
+
 ## 文件长什么样
 
 一个 Word 文件，名字像 `2026-10-27_wallace-extension_审核包.docx`。打开后最上面是【审校要点】，写着这几项：
@@ -39,7 +42,7 @@
 
 三种都行，挑顺手的：
 
-- **推到仓库**（推荐，会 git 的话）：`git checkout -b review/<篇名>-<你的ID>` → 文件放进 `review-inbox/docs/` → commit → push → 开 PR
+- **推到仓库**（推荐，会 git 的话）：`git checkout -b review/<篇名>-<你的ID>` → 文件放进 `review-inbox/docs/` → commit → push → 开 PR（PR 会自动跑一遍路径与命名检查，红了按提示改名或挪文件）
 - **微信回传**：私聊组长发文件，组长替你提交
 - **只给批注**：不想改字的话，把你觉得有问题的地方写成清单（第几段 + 问题 + 建议），发文本也行
 

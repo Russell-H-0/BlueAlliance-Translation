@@ -37,7 +37,7 @@ platforms: [linux, macos, windows]
 # 1) 探活：确认在仓库里、分支对、远端通、今天该审哪份
 python scripts/preflight.py
 
-# 2) 成员审完稿，把文件放进 review-inbox/api 对应目录后，提交前自检
+# 2) 成员审完稿，把文件放进 review-inbox/docs（或 notes）后，提交前自检
 python scripts/precheck_commit.py
 
 # 3) 通过后按提示提交（脚本只检查，不替你提交）

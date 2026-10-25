@@ -19,7 +19,6 @@
 | `sources/` | 原文全文与元信息（标题、作者、媒体、日期、链接） | 校对核原文用 |
 | `published/` | 已发布稿件的专区链接与回填数据 | 回溯用 |
 | `glossary.csv` | 译名与术语统一表（球员、规则、数据、战术） | 翻译前必看，随时可补 |
-| `legacy/` | 往期存档，`ThunderEra.docx` 是译文格式基准 | 新人先看这份 |
 | `WORKFLOW.md` | 工作手册：选题、翻译规范、校对、署名 | 全体 |
 | `REVIEW-GUIDE.md` | 校对岗的一页说明 | 校对 |
 | `_ops/` | **维护区，不对外**：`AGENTS.md`（自动流程说明）、`PLAN.md`（方案与待办）、`scripts/`（工具）、`candidates/`（每日候选与热度数据）、`log.csv`（抓取台账）、`review_log.csv`（校对留档）、`review/`（审核包收发与改动清单）、`templates/`（群通知文案） | 维护者 |

@@ -17,6 +17,7 @@
 
 用 agent 的成员可以装仓库里的同步技能 `skills/ba-git-sync`（只负责拉稿、命名、提交、开 PR，不审内容）：
 `python skills/ba-git-sync/scripts/preflight.py` 会告诉你今天该审哪份、改完该存成什么名字。
+装法、以及一段能直接复制给 agent 的 prompt，见 [WORKFLOW.md](WORKFLOW.md) 第九节「如果你有 agent，可以怎么做」。
 
 ## 文件长什么样
 

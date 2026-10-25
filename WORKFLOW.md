@@ -103,7 +103,66 @@
 4. 发布前必须有真人校对；没审过的稿子不发
 5. 译文版权归原作者与媒体，文末固定声明：仅供专区交流，禁止商用
 
-## 九、常见问题
+## 九、如果你有 agent，可以怎么做
+
+有 Hermes / Claude Code 这类工具的话，可以让它把 git 这一段全包了——拉稿、按规范命名、提交、开 PR、报错翻译成人话。
+**审稿还是你自己做**，agent 不碰内容。
+
+### 做法 A：让 agent 自己装（推荐）
+
+把下面整段复制给你的 agent，它会自己读仓库、装技能、跑自检：
+
+```
+你是我的翻译组协作助手，按下面步骤做，遇到不确定的先问我，不要自己发挥：
+
+1. 本地没有仓库就 clone：https://github.com/Russell-H-0/BlueAlliance-Translation.git
+2. 读仓库根的 README.md 和 REVIEW-GUIDE.md，先说一句你理解的这个仓库是干什么的
+3. 把 skills/ba-git-sync 整个目录装成本机技能：
+   - Hermes：拷到 ~/.hermes/skills/translation/ba-git-sync/（Windows 是 %USERPROFILE%\.hermes\skills\translation\ba-git-sync\）
+   - Claude Code：拷到 ~/.claude/skills/ba-git-sync/
+   - 其他工具：把 SKILL.md 当项目说明读，直接用里面的 scripts/*.py 就够
+4. 读 skills/ba-git-sync/INSTALL.md，确认 git、gh、python 是否就绪，缺什么告诉我
+5. 在仓库目录执行 python skills/ba-git-sync/scripts/preflight.py，把输出原样贴给我
+6. 根据输出告诉我：今天该审哪一份、改完要存成什么文件名、有没有 BLOCK 级问题
+
+做完停在这里等我改稿。不要修改任何译文文件，不要提交，不要推。
+```
+
+装完之后，日常只要一句话：
+
+```
+帮我拉最新稿子，看今天该审哪份
+```
+
+### 做法 B：不装技能，也照样能用
+
+```bash
+cd <仓库目录>
+git pull --ff-only
+python skills/ba-git-sync/scripts/preflight.py
+```
+
+然后照 `skills/ba-git-sync/references/git-four-commands.md` 敲四条命令。
+不装技能的时候，agent 甚至不用知道有技能这回事，让它跑这两条命令就行。
+
+### 交稿时的一句话 prompt
+
+```
+稿子改好了，文件是 review-inbox/docs/xxx_审回_我的ID.docx。
+请按 ba-git-sync 的流程：先跑 precheck_commit.py，通过后建分支 review/<篇名>-<你的ID>、
+commit、push、用 references/pr-template.md 的格式开 PR。
+不要修改译文内容，不要合并 PR，不要推 main。
+```
+
+### 三条禁令（不管用不用 agent）
+
+- 不改译文正文——要改就写进 PR 说明，由维护者定
+- 不合并 PR，不推 main
+- 不动 `_ops/`（维护区）和 `sources/`（原文全文，版权）
+
+技能当前版本 `0.1.0`，规则变了会升版本号并在群里说一声，届时 `git pull` 后重新拷一次技能目录即可。
+
+## 十、常见问题
 
 **为什么这篇明明写得很好，却没翻？**
 多半是热度不够（专区 100 帖里没人提这个话题），或者同题七天内已经出过。候选表里都记着分和理由，可以查。

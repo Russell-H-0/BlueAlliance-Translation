@@ -1,4 +1,4 @@
-英文,中文,类型,备注
+﻿英文,中文,类型,备注
 Shai Gilgeous-Alexander,谢伊·吉尔杰斯-亚历山大,球员,"首次出现给全名，后文用""亚历山大""；虎扑亦写作SGA"
 SGA,SGA,球员,缩写直接用
 Chet Holmgren,切特·霍姆格伦,球员,"后文用""霍姆格伦"""
@@ -154,3 +154,7 @@ Houston Rockets,休斯顿火箭,球队,
 Los Angeles Lakers,洛杉矶湖人,球队,
 Denver Nuggets,丹佛掘金,球队,
 Golden State Warriors,金州勇士,球队,
+Clay Bennett,克莱·贝内特,管理层,雷霆老板
+Steve Ballmer,史蒂夫·鲍尔默,管理层,快船老板，原文用作「肯花钱」的类比
+Josh Dix,乔什·迪克斯,球员,2026年双向合同新秀
+traded player exception,交易特例,规则,TPE，与 trade exception 同义
